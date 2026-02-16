@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rail — The Indian Railway Companion</title>
   <meta name="description" content="A premium Indian Railway tracking app built with SwiftUI, NestJS, Go, and PostgreSQL. Real-time train tracking, PNR status, journey management, and more.">
-  <meta name="theme-color" content="#13111C">
+  <meta name="theme-color" content="#0A0E1A">
   <meta property="og:title" content="Rail — The Indian Railway Companion">
   <meta property="og:description" content="A premium Indian Railway tracking app built with SwiftUI, NestJS, Go, and PostgreSQL.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://debanitrkl.github.io/rail-app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ── Reset ───────────────────────────────────────────────── */
     *, *::before, *::after {
@@ -21,37 +21,38 @@
       box-sizing: border-box;
     }
 
-    /* ── Design Tokens ───────────────────────────────────────── */
+    /* ── Design Tokens — Sarvam-Inspired Palette ─────────────── */
     :root {
-      --bg: #13111C;
-      --bg-surface: #1A1826;
-      --bg-card: #1E1C2A;
-      --bg-card-hover: #262435;
-      --bg-elevated: #17152A;
-      --bg-code: #0E0C17;
+      --bg: #0A0E1A;
+      --bg-surface: #0E1224;
+      --bg-card: #111628;
+      --bg-card-hover: #161C34;
+      --bg-elevated: #0C1020;
+      --bg-code: #080B14;
 
-      --accent: #E4A853;
-      --accent-bright: #F0C16E;
-      --accent-dim: rgba(228, 168, 83, 0.1);
-      --accent-glow: rgba(228, 168, 83, 0.06);
+      --blue: #2563EB;
+      --blue-bright: #3B82F6;
+      --blue-dim: rgba(37, 99, 235, 0.1);
+      --blue-glow: rgba(37, 99, 235, 0.06);
 
-      --purple: #8B5CF6;
-      --purple-bright: #A78BFA;
-      --purple-dim: rgba(139, 92, 246, 0.1);
-      --purple-glow: rgba(139, 92, 246, 0.06);
+      --saffron: #F97316;
+      --saffron-bright: #FB923C;
+      --saffron-dim: rgba(249, 115, 22, 0.1);
 
-      --blue: #3B82F6;
+      --gold: #E4A853;
+      --gold-bright: #F0C16E;
+      --gold-dim: rgba(228, 168, 83, 0.1);
+
       --green: #10B981;
       --red: #EF4444;
       --cyan: #06B6D4;
-      --pink: #EC4899;
 
       --text: #EEEEF0;
-      --text-secondary: #A09FB1;
-      --text-tertiary: #5C5B6F;
+      --text-secondary: #94A3B8;
+      --text-tertiary: #475569;
 
-      --border: #2D2B3D;
-      --border-subtle: #211F30;
+      --border: #1E293B;
+      --border-subtle: #172033;
 
       --radius: 12px;
       --radius-lg: 20px;
@@ -63,7 +64,8 @@
       --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
       --transition: 0.3s var(--ease);
 
-      --font-body: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', 'Inter Tight', system-ui, sans-serif;
+      --font-body: 'Inter Tight', 'Inter', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
     }
 
@@ -83,14 +85,14 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Noise texture overlay */
+    /* Noise texture */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
       z-index: 10000;
       pointer-events: none;
-      opacity: 0.018;
+      opacity: 0.022;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 180px 180px;
@@ -115,17 +117,18 @@
 
     /* ── Typography ──────────────────────────────────────────── */
     h1, h2, h3, h4 {
+      font-family: var(--font-display);
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.15;
     }
 
     a {
-      color: var(--accent);
+      color: var(--saffron);
       text-decoration: none;
       transition: color var(--transition);
     }
-    a:hover { color: var(--accent-bright); }
+    a:hover { color: var(--saffron-bright); }
 
     /* ── Layout ──────────────────────────────────────────────── */
     .container {
@@ -146,7 +149,7 @@
       font-family: var(--font-mono);
       font-size: 0.78rem;
       font-weight: 500;
-      color: var(--purple-bright);
+      color: var(--blue-bright);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-bottom: 20px;
@@ -156,12 +159,12 @@
       content: "";
       width: 24px;
       height: 1px;
-      background: var(--purple);
+      background: var(--blue);
     }
 
     .section-title {
       font-size: clamp(2rem, 4.5vw, 2.8rem);
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text);
       margin-bottom: 16px;
       letter-spacing: -0.035em;
@@ -181,10 +184,10 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(19, 17, 28, 0.7);
+      background: rgba(10, 14, 26, 0.7);
       backdrop-filter: blur(24px) saturate(1.5);
       -webkit-backdrop-filter: blur(24px) saturate(1.5);
-      border-bottom: 1px solid rgba(45, 43, 61, 0.5);
+      border-bottom: 1px solid rgba(30, 41, 59, 0.5);
       transition: background var(--transition);
     }
 
@@ -199,8 +202,9 @@
       display: flex;
       align-items: center;
       gap: 11px;
+      font-family: var(--font-display);
       font-size: 1.2rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text);
       letter-spacing: -0.02em;
     }
@@ -208,15 +212,15 @@
     .nav-brand-icon {
       width: 34px;
       height: 34px;
-      background: linear-gradient(135deg, var(--accent), #D4943F);
+      background: linear-gradient(135deg, var(--saffron), var(--blue));
       border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.82rem;
-      color: #13111C;
-      font-weight: 900;
-      box-shadow: 0 2px 12px rgba(228, 168, 83, 0.2);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 2px 12px rgba(249, 115, 22, 0.2);
     }
 
     .nav-links {
@@ -249,8 +253,8 @@
     }
     .nav-github:hover {
       color: var(--text);
-      border-color: var(--purple);
-      background: var(--purple-dim);
+      border-color: var(--blue);
+      background: var(--blue-dim);
     }
     .nav-github svg {
       width: 16px;
@@ -288,30 +292,30 @@
       padding: 140px 0 100px;
     }
 
-    /* Grid pattern */
+    /* Subtle grid */
     .hero-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-      background-size: 64px 64px;
+        linear-gradient(rgba(37, 99, 235, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
       mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
       -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
     }
 
-    /* Gradient orbs */
+    /* Gradient orbs — blue to saffron spectrum */
     .hero-orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(100px);
+      filter: blur(120px);
       pointer-events: none;
       will-change: transform;
     }
     .hero-orb-1 {
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
       top: -250px;
       left: -150px;
       animation: orbDrift1 22s ease-in-out infinite;
@@ -319,7 +323,7 @@
     .hero-orb-2 {
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(228, 168, 83, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
       top: -120px;
       right: -80px;
       animation: orbDrift2 28s ease-in-out infinite;
@@ -327,7 +331,7 @@
     .hero-orb-3 {
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
       bottom: -100px;
       left: 50%;
       transform: translateX(-50%);
@@ -350,6 +354,120 @@
       66% { transform: translateX(-50%) translate(-25px, 18px); }
     }
 
+    /* ── Mandala / Chakra — Indian Railways Heritage ─────────── */
+    .hero-mandala {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 640px;
+      height: 640px;
+      pointer-events: none;
+      opacity: 0.08;
+      animation: mandalaRotate 120s linear infinite;
+    }
+    @keyframes mandalaRotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* ── Railway Track Lines ─────────────────────────────────── */
+    .hero-tracks {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0.35;
+    }
+    .hero-tracks::before,
+    .hero-tracks::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      right: -20px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--blue) 15%, var(--saffron) 50%, var(--blue) 85%, transparent 100%);
+    }
+    .hero-tracks::before { top: 18px; }
+    .hero-tracks::after { top: 38px; }
+
+    .track-crossties {
+      position: absolute;
+      top: 14px;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 28px,
+        rgba(148, 163, 184, 0.15) 28px,
+        rgba(148, 163, 184, 0.15) 31px
+      );
+    }
+
+    /* ── Route Decoration ───────────────────────────────────── */
+    .hero-route {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .route-station {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .route-station-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--blue-bright);
+      background: var(--bg);
+      position: relative;
+      z-index: 2;
+    }
+    .route-station-dot.active {
+      background: var(--saffron);
+      border-color: var(--saffron);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+    }
+
+    .route-station-code {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+    .route-station-dot.active + .route-station-code,
+    .route-station.active .route-station-code {
+      color: var(--saffron);
+    }
+
+    .route-line {
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-bright));
+      position: relative;
+      top: -8px;
+    }
+    .route-line.passed {
+      background: linear-gradient(90deg, var(--saffron), var(--blue));
+    }
+
+    /* ── Hero Content ────────────────────────────────────────── */
     .hero-content {
       position: relative;
       z-index: 2;
@@ -361,12 +479,12 @@
       align-items: center;
       gap: 8px;
       padding: 7px 16px 7px 10px;
-      background: rgba(139, 92, 246, 0.08);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.2);
       border-radius: var(--radius-pill);
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--purple-bright);
+      color: var(--blue-bright);
       margin-bottom: 32px;
       letter-spacing: 0.01em;
     }
@@ -374,10 +492,10 @@
     .hero-badge-dot {
       width: 8px;
       height: 8px;
-      background: var(--purple);
+      background: var(--blue);
       border-radius: 50%;
       animation: pulseDot 2s ease-in-out infinite;
-      box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
     }
 
     @keyframes pulseDot {
@@ -386,15 +504,15 @@
     }
 
     .hero h1 {
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 900;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      font-weight: 700;
       letter-spacing: -0.05em;
       line-height: 0.95;
       margin-bottom: 16px;
     }
 
     .hero h1 .accent-text {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent) 60%, var(--accent-bright) 100%);
+      background: linear-gradient(135deg, #FFFFFF 10%, var(--blue-bright) 40%, var(--saffron) 80%, var(--gold-bright) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -406,6 +524,7 @@
       font-weight: 500;
       margin-bottom: 24px;
       letter-spacing: -0.01em;
+      font-family: var(--font-display);
     }
 
     .hero-description {
@@ -433,7 +552,7 @@
       border-radius: var(--radius);
       font-size: 0.925rem;
       font-weight: 600;
-      font-family: var(--font-body);
+      font-family: var(--font-display);
       cursor: pointer;
       transition: all var(--transition);
       border: none;
@@ -441,24 +560,24 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #D4943F);
-      color: #13111C;
-      box-shadow: 0 2px 20px rgba(228, 168, 83, 0.2), inset 0 1px 0 rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, var(--saffron), var(--blue));
+      color: #fff;
+      box-shadow: 0 2px 20px rgba(249, 115, 22, 0.2), inset 0 1px 0 rgba(255,255,255,0.15);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(228, 168, 83, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
-      color: #13111C;
+      box-shadow: 0 8px 32px rgba(249, 115, 22, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+      color: #fff;
     }
 
     .btn-secondary {
-      background: rgba(139, 92, 246, 0.08);
+      background: rgba(37, 99, 235, 0.08);
       color: var(--text);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.2);
     }
     .btn-secondary:hover {
-      background: rgba(139, 92, 246, 0.14);
-      border-color: rgba(139, 92, 246, 0.4);
+      background: rgba(37, 99, 235, 0.14);
+      border-color: rgba(37, 99, 235, 0.4);
       color: var(--text);
       transform: translateY(-2px);
     }
@@ -491,8 +610,9 @@
     }
 
     .stat-value {
+      font-family: var(--font-display);
       font-size: 1.65rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text);
       display: block;
       letter-spacing: -0.03em;
@@ -532,7 +652,7 @@
       overflow: hidden;
     }
 
-    /* Top gradient line */
+    /* Top gradient line — blue to saffron */
     .feature-card::before {
       content: "";
       position: absolute;
@@ -540,7 +660,7 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0), transparent);
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0), transparent);
       transition: background 0.35s var(--ease);
     }
 
@@ -549,20 +669,20 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(249, 115, 22, 0.02) 100%);
       opacity: 0;
       transition: opacity 0.35s var(--ease);
       border-radius: var(--radius-lg);
     }
 
     .feature-card:hover {
-      border-color: rgba(139, 92, 246, 0.25);
+      border-color: rgba(37, 99, 235, 0.25);
       background: var(--bg-card-hover);
       transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(139, 92, 246, 0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(37, 99, 235, 0.1);
     }
     .feature-card:hover::before {
-      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+      background: linear-gradient(90deg, transparent, var(--blue) 30%, var(--saffron) 70%, transparent);
     }
     .feature-card:hover::after {
       opacity: 1;
@@ -572,7 +692,7 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: var(--purple-dim);
+      background: var(--blue-dim);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -583,7 +703,7 @@
     .feature-icon svg {
       width: 22px;
       height: 22px;
-      stroke: var(--purple-bright);
+      stroke: var(--blue-bright);
       fill: none;
       stroke-width: 1.75;
       stroke-linecap: round;
@@ -612,12 +732,12 @@
       display: inline-block;
       margin-top: 16px;
       padding: 4px 11px;
-      background: var(--accent-dim);
-      border: 1px solid rgba(228, 168, 83, 0.12);
+      background: var(--saffron-dim);
+      border: 1px solid rgba(249, 115, 22, 0.12);
       border-radius: var(--radius-pill);
       font-size: 0.72rem;
       font-family: var(--font-mono);
-      color: var(--accent);
+      color: var(--saffron);
       font-weight: 500;
       position: relative;
       z-index: 1;
@@ -644,7 +764,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(139, 92, 246, 0.03), transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(37, 99, 235, 0.03), transparent 60%);
       border-radius: var(--radius-xl);
       pointer-events: none;
     }
@@ -684,7 +804,7 @@
     }
     .arch-legend-dot.client { background: #5E9EFF; }
     .arch-legend-dot.proxy { background: #50C878; }
-    .arch-legend-dot.api { background: var(--accent); }
+    .arch-legend-dot.api { background: var(--saffron); }
     .arch-legend-dot.data { background: #C77DBA; }
     .arch-legend-dot.worker { background: #FF7B72; }
 
@@ -711,9 +831,10 @@
       transition: all 0.35s var(--ease);
       cursor: default;
       letter-spacing: -0.01em;
+      font-family: var(--font-display);
     }
     .stack-pill:hover {
-      border-color: rgba(139, 92, 246, 0.25);
+      border-color: rgba(37, 99, 235, 0.25);
       background: var(--bg-card-hover);
       transform: translateY(-3px);
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
@@ -798,10 +919,10 @@
 
     .code-comment { color: var(--text-tertiary); }
     .code-command { color: var(--text); }
-    .code-accent { color: var(--purple-bright); }
+    .code-accent { color: var(--blue-bright); }
     .code-string { color: var(--green); }
     .code-prompt {
-      color: var(--accent);
+      color: var(--saffron);
       user-select: none;
     }
 
@@ -829,6 +950,7 @@
       display: flex;
       align-items: center;
       gap: 9px;
+      font-family: var(--font-display);
       font-weight: 700;
       color: var(--text);
       font-size: 0.95rem;
@@ -838,14 +960,14 @@
     .footer-brand-icon {
       width: 26px;
       height: 26px;
-      background: linear-gradient(135deg, var(--accent), #D4943F);
+      background: linear-gradient(135deg, var(--saffron), var(--blue));
       border-radius: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.6rem;
-      color: #13111C;
-      font-weight: 900;
+      color: #fff;
+      font-weight: 700;
     }
 
     .footer-meta {
@@ -873,6 +995,21 @@
       background: var(--border);
     }
 
+    /* ── Gateway Arch Divider ─────────────────────────────────── */
+    .gateway-divider {
+      position: relative;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .gateway-divider svg {
+      width: 240px;
+      height: 60px;
+      opacity: 0.12;
+    }
+
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 900px) {
       .features-grid {
@@ -883,6 +1020,13 @@
       }
       .stats-grid {
         gap: 32px;
+      }
+      .hero-mandala {
+        width: 420px;
+        height: 420px;
+      }
+      .hero-route {
+        display: none;
       }
     }
 
@@ -905,7 +1049,7 @@
         left: 0;
         right: 0;
         flex-direction: column;
-        background: rgba(19, 17, 28, 0.96);
+        background: rgba(10, 14, 26, 0.96);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
         padding: 20px 28px;
@@ -944,11 +1088,18 @@
       .stat-item {
         min-width: 120px;
       }
+      .hero-mandala {
+        width: 300px;
+        height: 300px;
+      }
+      .hero-tracks {
+        display: none;
+      }
     }
 
     /* ── Utilities ────────────────────────────────────────────── */
     ::selection {
-      background: rgba(139, 92, 246, 0.3);
+      background: rgba(37, 99, 235, 0.3);
       color: var(--text);
     }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -992,6 +1143,112 @@
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
     <div class="hero-orb hero-orb-3"></div>
+
+    <!-- Mandala — Chakra wheel with Sarvam-style orbital circles -->
+    <svg class="hero-mandala" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Concentric rings -->
+      <circle cx="320" cy="320" r="310" stroke="url(#mandalaGrad)" stroke-width="0.8"/>
+      <circle cx="320" cy="320" r="250" stroke="url(#mandalaGrad)" stroke-width="0.6"/>
+      <circle cx="320" cy="320" r="190" stroke="url(#mandalaGrad)" stroke-width="0.5"/>
+      <circle cx="320" cy="320" r="130" stroke="url(#mandalaGrad)" stroke-width="0.4"/>
+      <circle cx="320" cy="320" r="70" stroke="url(#mandalaGrad)" stroke-width="0.3"/>
+
+      <!-- 24 Spokes — Ashoka Chakra reference -->
+      <g stroke="url(#mandalaGrad)" stroke-width="0.5" opacity="0.6">
+        <line x1="320" y1="10" x2="320" y2="630"/>
+        <line x1="10" y1="320" x2="630" y2="320"/>
+        <line x1="91" y1="91" x2="549" y2="549"/>
+        <line x1="549" y1="91" x2="91" y2="549"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(15 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(30 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(60 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(75 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(105 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(120 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(150 320 320)"/>
+        <line x1="320" y1="10" x2="320" y2="630" transform="rotate(165 320 320)"/>
+      </g>
+
+      <!-- 12 Orbital circles — Sarvam mandala geometry -->
+      <circle cx="320" cy="70" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="453" cy="108" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="550" cy="195" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="570" cy="320" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="550" cy="445" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="453" cy="532" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="320" cy="570" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="187" cy="532" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="90" cy="445" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="70" cy="320" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="90" cy="195" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+      <circle cx="187" cy="108" r="18" stroke="url(#mandalaGrad)" stroke-width="0.6" fill="none"/>
+
+      <!-- Lotus petals — inner ring -->
+      <g opacity="0.4">
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(0 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(30 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(60 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(90 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(120 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(150 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(180 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(210 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(240 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(270 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(300 320 320)"/>
+        <ellipse cx="320" cy="240" rx="12" ry="30" fill="url(#mandalaGrad)" transform="rotate(330 320 320)"/>
+      </g>
+
+      <!-- Center hub — train wheel -->
+      <circle cx="320" cy="320" r="24" stroke="url(#mandalaGrad)" stroke-width="1"/>
+      <circle cx="320" cy="320" r="8" fill="url(#mandalaGrad)"/>
+
+      <defs>
+        <linearGradient id="mandalaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#2563EB"/>
+          <stop offset="50%" stop-color="#F97316"/>
+          <stop offset="100%" stop-color="#2563EB"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- Railway track lines -->
+    <div class="hero-tracks">
+      <div class="track-crossties"></div>
+    </div>
+
+    <!-- Route decoration with station codes -->
+    <div class="hero-route">
+      <div class="route-station active">
+        <div class="route-station-dot active"></div>
+        <span class="route-station-code">NDLS</span>
+      </div>
+      <div class="route-line passed"></div>
+      <div class="route-station">
+        <div class="route-station-dot"></div>
+        <span class="route-station-code">AGC</span>
+      </div>
+      <div class="route-line"></div>
+      <div class="route-station">
+        <div class="route-station-dot"></div>
+        <span class="route-station-code">BPL</span>
+      </div>
+      <div class="route-line"></div>
+      <div class="route-station">
+        <div class="route-station-dot"></div>
+        <span class="route-station-code">NGP</span>
+      </div>
+      <div class="route-line"></div>
+      <div class="route-station">
+        <div class="route-station-dot"></div>
+        <span class="route-station-code">SC</span>
+      </div>
+      <div class="route-line"></div>
+      <div class="route-station">
+        <div class="route-station-dot"></div>
+        <span class="route-station-code">MAS</span>
+      </div>
+    </div>
 
     <div class="container">
       <div class="hero-content">
@@ -1139,6 +1396,23 @@
     </div>
   </section>
 
+  <!-- ── Gateway Arch Divider ────────────────────────────────── -->
+  <div class="gateway-divider">
+    <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 60 Q120 -10 220 60" stroke="url(#gatewayGrad)" stroke-width="1.5" fill="none"/>
+      <path d="M40 60 Q120 5 200 60" stroke="url(#gatewayGrad)" stroke-width="0.8" fill="none"/>
+      <line x1="20" y1="60" x2="20" y2="40" stroke="url(#gatewayGrad)" stroke-width="1"/>
+      <line x1="220" y1="60" x2="220" y2="40" stroke="url(#gatewayGrad)" stroke-width="1"/>
+      <defs>
+        <linearGradient id="gatewayGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#2563EB"/>
+          <stop offset="50%" stop-color="#F97316"/>
+          <stop offset="100%" stop-color="#2563EB"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
   <!-- ── Architecture ────────────────────────────────────────── -->
   <section id="architecture" class="architecture">
     <div class="container">
@@ -1176,42 +1450,42 @@
 
           <!-- iOS App -->
           <rect x="20" y="127" width="152" height="66" rx="12" fill="rgba(94,158,255,0.06)" stroke="rgba(94,158,255,0.2)" stroke-width="1"/>
-          <text x="96" y="154" text-anchor="middle" fill="#5E9EFF" font-size="14" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">iOS App</text>
+          <text x="96" y="154" text-anchor="middle" fill="#5E9EFF" font-size="14" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">iOS App</text>
           <text x="96" y="172" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10.5" font-family="'JetBrains Mono',monospace">SwiftUI + MapKit</text>
 
           <!-- Caddy -->
           <rect x="234" y="127" width="152" height="66" rx="12" fill="rgba(80,200,120,0.06)" stroke="rgba(80,200,120,0.2)" stroke-width="1"/>
-          <text x="310" y="154" text-anchor="middle" fill="#50C878" font-size="14" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">Caddy</text>
+          <text x="310" y="154" text-anchor="middle" fill="#50C878" font-size="14" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">Caddy</text>
           <text x="310" y="172" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10.5" font-family="'JetBrains Mono',monospace">Reverse Proxy</text>
 
           <!-- NestJS -->
-          <rect x="448" y="127" width="172" height="66" rx="12" fill="rgba(228,168,83,0.06)" stroke="rgba(228,168,83,0.2)" stroke-width="1"/>
-          <text x="534" y="154" text-anchor="middle" fill="#E4A853" font-size="14" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">NestJS</text>
+          <rect x="448" y="127" width="172" height="66" rx="12" fill="rgba(249,115,22,0.06)" stroke="rgba(249,115,22,0.2)" stroke-width="1"/>
+          <text x="534" y="154" text-anchor="middle" fill="#F97316" font-size="14" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">NestJS</text>
           <text x="534" y="172" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10.5" font-family="'JetBrains Mono',monospace">REST API + BullMQ</text>
 
           <!-- PostgreSQL -->
           <rect x="698" y="25" width="158" height="54" rx="12" fill="rgba(199,125,186,0.06)" stroke="rgba(199,125,186,0.2)" stroke-width="1"/>
-          <text x="777" y="48" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">PostgreSQL</text>
+          <text x="777" y="48" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">PostgreSQL</text>
           <text x="777" y="64" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'JetBrains Mono',monospace">Primary Store</text>
 
           <!-- Valkey -->
           <rect x="698" y="97" width="158" height="54" rx="12" fill="rgba(199,125,186,0.06)" stroke="rgba(199,125,186,0.2)" stroke-width="1"/>
-          <text x="777" y="120" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">Valkey</text>
+          <text x="777" y="120" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">Valkey</text>
           <text x="777" y="136" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'JetBrains Mono',monospace">Cache + Queues</text>
 
           <!-- Meilisearch -->
           <rect x="698" y="169" width="158" height="54" rx="12" fill="rgba(199,125,186,0.06)" stroke="rgba(199,125,186,0.2)" stroke-width="1"/>
-          <text x="777" y="192" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">Meilisearch</text>
+          <text x="777" y="192" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">Meilisearch</text>
           <text x="777" y="208" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'JetBrains Mono',monospace">Search Engine</text>
 
           <!-- Parseable -->
           <rect x="698" y="241" width="158" height="54" rx="12" fill="rgba(199,125,186,0.06)" stroke="rgba(199,125,186,0.2)" stroke-width="1"/>
-          <text x="777" y="264" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">Parseable</text>
+          <text x="777" y="264" text-anchor="middle" fill="#C77DBA" font-size="13" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">Parseable</text>
           <text x="777" y="280" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'JetBrains Mono',monospace">Log Analytics</text>
 
           <!-- Go Worker -->
           <rect x="448" y="320" width="172" height="54" rx="12" fill="rgba(255,123,114,0.06)" stroke="rgba(255,123,114,0.2)" stroke-width="1"/>
-          <text x="534" y="343" text-anchor="middle" fill="#FF7B72" font-size="13" font-weight="600" font-family="'Inter Tight',system-ui,sans-serif">Go Ingestion Worker</text>
+          <text x="534" y="343" text-anchor="middle" fill="#FF7B72" font-size="13" font-weight="600" font-family="'Space Grotesk','Inter Tight',system-ui,sans-serif">Go Ingestion Worker</text>
           <text x="534" y="359" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'JetBrains Mono',monospace">Cron + Bulk ETL</text>
 
           <text x="662" y="343" fill="rgba(255,255,255,0.25)" font-size="10.5" font-family="'JetBrains Mono',monospace">PostgreSQL +</text>
@@ -1262,7 +1536,7 @@
           <div><div>PostgreSQL</div><div class="stack-pill-category">Database</div></div>
         </div>
         <div class="stack-pill reveal reveal-d3">
-          <div class="stack-pill-icon" style="background:rgba(139,92,246,0.12);color:#8B5CF6;">V</div>
+          <div class="stack-pill-icon" style="background:rgba(37,99,235,0.12);color:#2563EB;">V</div>
           <div><div>Valkey</div><div class="stack-pill-category">Cache</div></div>
         </div>
         <div class="stack-pill reveal reveal-d4">
@@ -1286,7 +1560,7 @@
           <div><div>BullMQ</div><div class="stack-pill-category">Queue</div></div>
         </div>
         <div class="stack-pill reveal reveal-d6">
-          <div class="stack-pill-icon" style="background:rgba(228,168,83,0.12);color:#E4A853;">P</div>
+          <div class="stack-pill-icon" style="background:rgba(249,115,22,0.12);color:#F97316;">P</div>
           <div><div>Parseable</div><div class="stack-pill-category">Logging</div></div>
         </div>
       </div>
