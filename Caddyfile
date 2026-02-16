@@ -1,0 +1,54 @@
+{
+	auto_https off
+}
+
+:80 {
+	# API reverse proxy
+	handle /api/* {
+		reverse_proxy api:3001
+	}
+
+	# Health check
+	handle /health {
+		respond "OK" 200
+	}
+
+	# Parseable Console (monitoring + observability)
+	handle /parseable/* {
+		uri strip_prefix /parseable
+		reverse_proxy parseable:8000
+	}
+
+	# Meilisearch (internal only, restrict in production)
+	handle /search/* {
+		uri strip_prefix /search
+		reverse_proxy meilisearch:7700
+	}
+
+	# Static frontend
+	handle {
+		root * /srv
+		file_server
+		try_files {path} /index.html
+	}
+
+	# Logging
+	log {
+		output stdout
+		format json
+	}
+
+	# Headers
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+
+	# CORS for API
+	@api path /api/*
+	header @api Access-Control-Allow-Origin *
+	header @api Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+	header @api Access-Control-Allow-Headers "Content-Type, Authorization"
+}

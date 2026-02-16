@@ -1,0 +1,186 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: rail-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d/migrations
+      - ./database/seeds:/docker-entrypoint-initdb.d/seeds
+      - ./database/init.sh:/docker-entrypoint-initdb.d/00-init.sh
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rail-network
+
+  parseable:
+    image: parseable/parseable:latest
+    container_name: rail-parseable
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      P_USERNAME: ${PARSEABLE_USER}
+      P_PASSWORD: ${PARSEABLE_PASSWORD}
+      P_STAGING_DIR: /parseable/staging
+      P_FS_DIR: /parseable/data
+    command: ["parseable", "local-store"]
+    volumes:
+      - parseable_data:/parseable/data
+      - parseable_staging:/parseable/staging
+    healthcheck:
+      test: ["NONE"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - rail-network
+
+  valkey:
+    image: valkey/valkey:latest
+    container_name: rail-valkey
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - valkey_data:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rail-network
+
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    container_name: rail-meilisearch
+    restart: unless-stopped
+    ports:
+      - "7700:7700"
+    environment:
+      MEILI_MASTER_KEY: ${MEILISEARCH_MASTER_KEY}
+      MEILI_ENV: development
+    volumes:
+      - meilisearch_data:/meili_data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rail-network
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rail-api
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      API_PORT: ${API_PORT}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      PARSEABLE_URL: ${PARSEABLE_URL}
+      PARSEABLE_USER: ${PARSEABLE_USER}
+      PARSEABLE_PASSWORD: ${PARSEABLE_PASSWORD}
+      VALKEY_HOST: ${VALKEY_HOST}
+      VALKEY_PORT: ${VALKEY_PORT}
+      MEILISEARCH_HOST: ${MEILISEARCH_HOST}
+      MEILISEARCH_MASTER_KEY: ${MEILISEARCH_MASTER_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+      ML_SERVICE_URL: ${ML_SERVICE_URL}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+      parseable:
+        condition: service_started
+      meilisearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rail-network
+
+  ingestion:
+    build:
+      context: ./ingestion
+      dockerfile: Dockerfile
+    container_name: rail-ingestion
+    restart: unless-stopped
+    environment:
+      PARSEABLE_URL: ${PARSEABLE_URL}
+      PARSEABLE_USER: ${PARSEABLE_USER}
+      PARSEABLE_PASSWORD: ${PARSEABLE_PASSWORD}
+      VALKEY_HOST: ${VALKEY_HOST}
+      VALKEY_PORT: ${VALKEY_PORT}
+      NTES_BASE_URL: ${NTES_BASE_URL}
+      INGESTION_POLL_INTERVAL: ${INGESTION_POLL_INTERVAL}
+      MOCK_DATA: ${MOCK_DATA}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    depends_on:
+      parseable:
+        condition: service_started
+      valkey:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    networks:
+      - rail-network
+
+  caddy:
+    image: caddy:latest
+    container_name: rail-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - rail-network
+
+volumes:
+  postgres_data:
+  parseable_data:
+  parseable_staging:
+  valkey_data:
+  meilisearch_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  rail-network:
+    driver: bridge

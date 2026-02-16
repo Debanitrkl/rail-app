@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+backend/dist/
+
+# Environment
+.env
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+data/
+volumes/
+
+# Logs
+*.log
+logs/
+
+# Build
+dist/
+build/
+*.js.map
+
+# Go
+ingestion/bin/
+ingestion/vendor/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Temp
+tmp/
+temp/
+
+# Xcode
+Rail/Rail.xcodeproj/project.xcworkspace/xcuserdata/
+Rail/Rail.xcodeproj/xcuserdata/
+Rail/xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM

@@ -1,0 +1,941 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		006B804476221DAB93FE7DC9 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C37DAC583FD4B3A253A0C31 /* Coach.swift */; };
+		0070955C3A7DD0E55A8A6182 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC8DB9BF3378D0C4D48B10 /* Train.swift */; };
+		04D0F41203E2D0976671E022 /* JourneysScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E3ACDE6D68A26D1D1E1A8 /* JourneysScreen.swift */; };
+		0EED3512DBCDC0DEFA831CE9 /* String+Railway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6708DCEB9D39842B821D8A40 /* String+Railway.swift */; };
+		0F8B5B8D100873A24844A6CF /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD29EE7FA2ED7DD34072397 /* StationViewModel.swift */; };
+		11B0E3FA8FF09A31783D4B86 /* LiveTrackingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C61FB2A28BA8034B822E94 /* LiveTrackingScreen.swift */; };
+		12F1AC81CF2F0D9A724E6FA6 /* RecentSearchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18041AEA52263295926A32F /* RecentSearchesList.swift */; };
+		16FED33F7792008245614968 /* PNRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D462D26E2849A89330E085 /* PNRService.swift */; };
+		178076BD1D59B3F8E01805E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D97F871B5932C545D399DD /* ContentView.swift */; };
+		1935E4483C62B9487EAA1EB5 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB01D68E1380B9C86B6DE /* Route.swift */; };
+		1A825ECCE7AF4AF132DA1656 /* MonoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03100323ADF9A1D9D021A69C /* MonoText.swift */; };
+		1B183E34757BB48B9D82B13E /* ActiveJourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87ED28C2FDA254BA4B83DBB /* ActiveJourneyCard.swift */; };
+		1D59D4516CA07DA0F1F31A52 /* PNR.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABA026D4623AE40CFEFD61 /* PNR.swift */; };
+		2101120333DCD3E652178696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E400555CE8B8F8BC9AE1A0 /* Assets.xcassets */; };
+		21DDD3B0264C161D7ECE6DF5 /* RailActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BAA6A203E9155A0274A74 /* RailActivityAttributes.swift */; };
+		253F421BFA6D9B469952282F /* RailLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA3E448C28E167B43F8516 /* RailLiveActivityView.swift */; };
+		25EA9790997A000A3F30A695 /* JourneyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A50DFA706D0F51FB0F0D2B /* JourneyDetailViewModel.swift */; };
+		27A84A7CC44C67380476AE55 /* UpcomingJourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA4CFDAA6BE3235775ED97 /* UpcomingJourneyCard.swift */; };
+		27D4C7A02498404FED124958 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DADFEBC43F82B503FF9FB1 /* StationService.swift */; };
+		2C51094DB4EAD3FE8D1CEB3D /* StationTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC45B18E45295A62386E1C /* StationTimelineView.swift */; };
+		30B0A396C2B2E135ECD33EEF /* PNRWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50E98A0EBE949F9B51B674 /* PNRWidgetView.swift */; };
+		353E4A99727DD431CC82E18E /* StationHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC11A334BFF0D09A3E1714 /* StationHeroView.swift */; };
+		38F021C190DFAF1D8ABB68AF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B32629CF547D4C92D157 /* APIClient.swift */; };
+		395E2D6828B008FC090D6486 /* TrainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F342262F85F044A3B11E30 /* TrainService.swift */; };
+		3962EF487B67DCD282422251 /* LiveTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EED1418E8779021FE36DDB /* LiveTrackingViewModel.swift */; };
+		3C64F459A6B68B7A98713432 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9A125C557FF1810D64CA4 /* APIEndpoint.swift */; };
+		3CA19C8FD3743D209F5D4FF3 /* RailWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7115FF7BE2193DECB033DADB /* RailWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F9B0C9EEB431B7A707FEE4D /* RailWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE042F396AA113A2A31916E3 /* RailWidgetBundle.swift */; };
+		4753C7EDD7FE2543C72A8DA3 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CAEEE71A5DAC4581D46DB7 /* Date+Formatting.swift */; };
+		48711F7A96845D627959D4E2 /* SearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE559CED5FB0A69917ADFB6 /* SearchInputView.swift */; };
+		4929AC1E1CF37945A712409B /* RailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42F78C5CAC20CAB8C6EB9B /* RailCard.swift */; };
+		499C48F7C19302F96B222096 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11281B8F3E771ED3BE635AC2 /* Color+Hex.swift */; };
+		4C3DD16365A20B9F961F7FCF /* DisplayText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437D7932AA69DD5B85FC825 /* DisplayText.swift */; };
+		4C7D1AD9D0CE93DF2F8BE30E /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F47CAF82435A0CA6258375 /* SearchScreen.swift */; };
+		4E76E82FD44EBCBD2404AA36 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD53BE3CB54A4703D1BD02 /* RouteMapView.swift */; };
+		52136681C61B95564D635DBC /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82810409289C9A3D7BADA620 /* Journey.swift */; };
+		6173A27B2AC519DD4426897A /* ETABadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6748BFE6D961082756BA409 /* ETABadgeView.swift */; };
+		6323549941F04B2637DC5E6F /* MetaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076038FBD6F6015AE8DCC68 /* MetaItemView.swift */; };
+		669B2E756AC774F924FC9319 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78D4346F2BBBA402A59050 /* SearchViewModel.swift */; };
+		678F67DD78239BEB9F884D13 /* PNRWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F960693D423FEDB564F10 /* PNRWidget.swift */; };
+		67E4FAF1014C20C34DC2CEAF /* QuickActionsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A38BB3A1A39D264F9AE7FB /* QuickActionsGrid.swift */; };
+		7B3E9F8F3C4C5746E5B5BD45 /* RouteDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326384599521EDC2006BFB4A /* RouteDisplayView.swift */; };
+		8008F85151B8826014C8076F /* PlatformGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2FDF283E7D9E268D73D591 /* PlatformGridView.swift */; };
+		837FDDC26C9649C70272DAA8 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C8B30B5C240978A0EB93A2 /* PersistenceService.swift */; };
+		840FF7BE319CA6E07AB55470 /* JourneysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD791B06CF3F266BC4F39DC /* JourneysViewModel.swift */; };
+		8893EE4EF19C99B53CB097A4 /* PNRStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC5013CF284BDCA0401185 /* PNRStatusCard.swift */; };
+		8A25BEB9349F7BF9595D8D02 /* StationSearchResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157A12CBCFCC14DDC2BA56AA /* StationSearchResultsList.swift */; };
+		8FFA1DB2B78EE53D06029310 /* RailColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB84BDC3088180374342B /* RailColors.swift */; };
+		9983CCDE3A70F5C2B3CCB657 /* JourneyDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A107ADB3371E5CEDF410716 /* JourneyDetailScreen.swift */; };
+		99A72EEE172DA16F3ECEE1EC /* SectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6E60E19E37ED029E5BBAE /* SectionLabel.swift */; };
+		9BFF71D303DEA19485BE2B76 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198DD4979DDD09B5E4033B28 /* AppConfig.swift */; };
+		9D2EF50578F762F03A45FF60 /* RailAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69F247989DF2173D02DD06C /* RailAnimations.swift */; };
+		A04F167CE40D65E5DDEC44F7 /* LiveStationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1FF213B2B0E84817EADDE /* LiveStationEvent.swift */; };
+		A3A5763610F929863B541131 /* JourneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AB54BD95E8621803C21F3 /* JourneyService.swift */; };
+		A45E07D5B9B5A18022227CAF /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A5BF8DB727112DABA67C94 /* APIResponse.swift */; };
+		AC6E7EB2344DF63BA5EF3893 /* SpeedBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B986E0DD5A9272CDB12688 /* SpeedBadgeView.swift */; };
+		ADF0400B2EFBEDA7E4C642E7 /* PulseDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B407936CF8B0237EDF5BF1B /* PulseDot.swift */; };
+		B34C3A8EC685CD358488FFF5 /* AmenitiesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC93BA5D2A2475108FC9E18 /* AmenitiesRow.swift */; };
+		B59852A9407CBDDE2181ECEE /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8A02412B5F63B886D22C7 /* PageHeader.swift */; };
+		B5C909D38C2FB47D927BF8E7 /* DeparturesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39403508F3808023A7C9C6 /* DeparturesListView.swift */; };
+		B906D9F34464102DF3EC0290 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277E90C73A6DF21A76309AC /* ErrorView.swift */; };
+		BD83D118F7CEA5C3CD7B31BA /* DetailHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753508596A641AED20C2865D /* DetailHeroView.swift */; };
+		C14D9126CF6C7EDAD1A3C79A /* LivePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D8B7883E935B0EA16D37B /* LivePosition.swift */; };
+		C942007EC67E70D978F89192 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31886B037639C92CE2068BA /* APIError.swift */; };
+		D0F984831B52263C5D877993 /* BookingDetailsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316CD30A132763CD04C5857 /* BookingDetailsCard.swift */; };
+		D370BCAA94BBB863774DC9E7 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5D2DD125690283F2EFD9 /* Platform.swift */; };
+		D4B387BE1A87FE9313F5E0A3 /* RailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D961AFD3C0146B29A0236B8 /* RailApp.swift */; };
+		D555120DF54B9C98A37E8A51 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5286F28D17F16EC4FBFBD /* LoadingView.swift */; };
+		D7EAD45C309C950843AF559D /* CoachCompositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF59A10FBE4394EF72E5A6A /* CoachCompositionView.swift */; };
+		D92192FB6C8027F4289B8801 /* LiveTrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4904F40EF98CB565EAD4DA /* LiveTrackingService.swift */; };
+		DAAF276DE7F8C260349CEDFD /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB2FD5DFA2B90075EF5A79 /* Station.swift */; };
+		DB8BB2F315671FF0CC11CA56 /* View+FadeInUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03E9DE1F1355E5411E1369 /* View+FadeInUp.swift */; };
+		DC21BAADD74CDDE251B62C98 /* RailTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7017FB0EAED21E6BAD1C02 /* RailTypography.swift */; };
+		DC3C675698EE3A8D800D0718 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EFAAA4E97E07E0A2B8A26 /* BadgeView.swift */; };
+		DD9239248A6658835CFCEED5 /* TrainIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA05362B9BED561EE00FFC /* TrainIconView.swift */; };
+		E01729BA89B4F32A4C836282 /* JourneyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232544527F4270C64FE2ECE /* JourneyWidget.swift */; };
+		E5E61B60E4AA65358DB9A86E /* TrainSearchResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67727C822C57AC27217BA3A /* TrainSearchResultsList.swift */; };
+		E68FD08CFDB82B98D83FEDE6 /* RailSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A2E0C6E3D2EF4F89202AB8 /* RailSpacing.swift */; };
+		ED9B24D659EFA88A8616FF2B /* StationInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B3B7D20D7EC0E01C78369 /* StationInfoScreen.swift */; };
+		F019B81C1278009C20DC6C7B /* SSEClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E4A49D305383CBE6F03D5 /* SSEClient.swift */; };
+		F58E359BC71F1C36ED5C7622 /* JourneyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47078087AC8EBBDF5057418B /* JourneyWidgetView.swift */; };
+		F8058E7409BDD907630CB5AD /* StationStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139EC455CB51DE974ED17B0 /* StationStatsView.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* IndiaMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6F7890ABCDE12 /* IndiaMapView.swift */; };
+		BB1C2D3E4F5A6B7C8D9E0F11 /* StationCoordinateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B2C3D4E5F6A7B8C9D0E11 /* StationCoordinateService.swift */; };
+		DD3E4F5A6B7C8D9E0F1A2B33 /* GeoRouteStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2D3E4F5A6B7C8D9E0F1A22 /* GeoRouteStop.swift */; };
+		FF5A6B7C8D9E0F1A2B3C4D55 /* TrainRouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4F5A6B7C8D9E0F1A2B3C44 /* TrainRouteMapView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA284B6000EA077577122A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F489BFA196A1A47417DC34ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBDE6D96DCABEEBEBC8F7A40;
+			remoteInfo = RailWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D2967D0CA29C3B75822839AD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3CA19C8FD3743D209F5D4FF3 /* RailWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03100323ADF9A1D9D021A69C /* MonoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonoText.swift; sourceTree = "<group>"; };
+		03FB2FD5DFA2B90075EF5A79 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		11281B8F3E771ED3BE635AC2 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		11C5286F28D17F16EC4FBFBD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		157A12CBCFCC14DDC2BA56AA /* StationSearchResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchResultsList.swift; sourceTree = "<group>"; };
+		17EA3E448C28E167B43F8516 /* RailLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailLiveActivityView.swift; sourceTree = "<group>"; };
+		198DD4979DDD09B5E4033B28 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		2316CD30A132763CD04C5857 /* BookingDetailsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsCard.swift; sourceTree = "<group>"; };
+		23EED1418E8779021FE36DDB /* LiveTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingViewModel.swift; sourceTree = "<group>"; };
+		2437D7932AA69DD5B85FC825 /* DisplayText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayText.swift; sourceTree = "<group>"; };
+		25C8B30B5C240978A0EB93A2 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		2ACA4CFDAA6BE3235775ED97 /* UpcomingJourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingJourneyCard.swift; sourceTree = "<group>"; };
+		2C37DAC583FD4B3A253A0C31 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
+		2D0F960693D423FEDB564F10 /* PNRWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNRWidget.swift; sourceTree = "<group>"; };
+		326384599521EDC2006BFB4A /* RouteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDisplayView.swift; sourceTree = "<group>"; };
+		35CA05362B9BED561EE00FFC /* TrainIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainIconView.swift; sourceTree = "<group>"; };
+		372AB54BD95E8621803C21F3 /* JourneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyService.swift; sourceTree = "<group>"; };
+		3A78D4346F2BBBA402A59050 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3D961AFD3C0146B29A0236B8 /* RailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailApp.swift; sourceTree = "<group>"; };
+		3F7017FB0EAED21E6BAD1C02 /* RailTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailTypography.swift; sourceTree = "<group>"; };
+		4232544527F4270C64FE2ECE /* JourneyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyWidget.swift; sourceTree = "<group>"; };
+		44A6E60E19E37ED029E5BBAE /* SectionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLabel.swift; sourceTree = "<group>"; };
+		47078087AC8EBBDF5057418B /* JourneyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyWidgetView.swift; sourceTree = "<group>"; };
+		4A107ADB3371E5CEDF410716 /* JourneyDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDetailScreen.swift; sourceTree = "<group>"; };
+		4B08252B47F63DC796974686 /* Rail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4904F40EF98CB565EAD4DA /* LiveTrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingService.swift; sourceTree = "<group>"; };
+		52B986E0DD5A9272CDB12688 /* SpeedBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBadgeView.swift; sourceTree = "<group>"; };
+		59CAEEE71A5DAC4581D46DB7 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		5F50E98A0EBE949F9B51B674 /* PNRWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNRWidgetView.swift; sourceTree = "<group>"; };
+		6139EC455CB51DE974ED17B0 /* StationStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatsView.swift; sourceTree = "<group>"; };
+		6708DCEB9D39842B821D8A40 /* String+Railway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Railway.swift"; sourceTree = "<group>"; };
+		67FAB01D68E1380B9C86B6DE /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		6BE559CED5FB0A69917ADFB6 /* SearchInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputView.swift; sourceTree = "<group>"; };
+		7115FF7BE2193DECB033DADB /* RailWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RailWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F47CAF82435A0CA6258375 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
+		753508596A641AED20C2865D /* DetailHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeroView.swift; sourceTree = "<group>"; };
+		75CD53BE3CB54A4703D1BD02 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
+		79A2E0C6E3D2EF4F89202AB8 /* RailSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailSpacing.swift; sourceTree = "<group>"; };
+		7D9E3ACDE6D68A26D1D1E1A8 /* JourneysScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysScreen.swift; sourceTree = "<group>"; };
+		7DD791B06CF3F266BC4F39DC /* JourneysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysViewModel.swift; sourceTree = "<group>"; };
+		82810409289C9A3D7BADA620 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		88D462D26E2849A89330E085 /* PNRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNRService.swift; sourceTree = "<group>"; };
+		89B9A125C557FF1810D64CA4 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		8B407936CF8B0237EDF5BF1B /* PulseDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDot.swift; sourceTree = "<group>"; };
+		96D3F8D7080AC23BEB45D16C /* RailWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RailWidget.entitlements; sourceTree = "<group>"; };
+		9A6DE02703AB41CCF0603860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B3A5C0E9EC31394B910A1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A076038FBD6F6015AE8DCC68 /* MetaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaItemView.swift; sourceTree = "<group>"; };
+		A12EFAAA4E97E07E0A2B8A26 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		A4A5BF8DB727112DABA67C94 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		A66BAA6A203E9155A0274A74 /* RailActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailActivityAttributes.swift; sourceTree = "<group>"; };
+		A67727C822C57AC27217BA3A /* TrainSearchResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSearchResultsList.swift; sourceTree = "<group>"; };
+		A6BC45B18E45295A62386E1C /* StationTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTimelineView.swift; sourceTree = "<group>"; };
+		AF2FDF283E7D9E268D73D591 /* PlatformGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformGridView.swift; sourceTree = "<group>"; };
+		B18041AEA52263295926A32F /* RecentSearchesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesList.swift; sourceTree = "<group>"; };
+		B30D8B7883E935B0EA16D37B /* LivePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePosition.swift; sourceTree = "<group>"; };
+		B9FC8DB9BF3378D0C4D48B10 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		BF5F5D2DD125690283F2EFD9 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		C6748BFE6D961082756BA409 /* ETABadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETABadgeView.swift; sourceTree = "<group>"; };
+		C69F247989DF2173D02DD06C /* RailAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailAnimations.swift; sourceTree = "<group>"; };
+		C7ABA026D4623AE40CFEFD61 /* PNR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNR.swift; sourceTree = "<group>"; };
+		C87ED28C2FDA254BA4B83DBB /* ActiveJourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveJourneyCard.swift; sourceTree = "<group>"; };
+		CB03E9DE1F1355E5411E1369 /* View+FadeInUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FadeInUp.swift"; sourceTree = "<group>"; };
+		CE042F396AA113A2A31916E3 /* RailWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailWidgetBundle.swift; sourceTree = "<group>"; };
+		CEAC5013CF284BDCA0401185 /* PNRStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNRStatusCard.swift; sourceTree = "<group>"; };
+		CEF59A10FBE4394EF72E5A6A /* CoachCompositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCompositionView.swift; sourceTree = "<group>"; };
+		CF39403508F3808023A7C9C6 /* DeparturesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesListView.swift; sourceTree = "<group>"; };
+		D0A50DFA706D0F51FB0F0D2B /* JourneyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDetailViewModel.swift; sourceTree = "<group>"; };
+		D21E2A81CE961A3A34AE9366 /* Rail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rail.entitlements; sourceTree = "<group>"; };
+		D37E4A49D305383CBE6F03D5 /* SSEClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSEClient.swift; sourceTree = "<group>"; };
+		D3C61FB2A28BA8034B822E94 /* LiveTrackingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingScreen.swift; sourceTree = "<group>"; };
+		D78B3B7D20D7EC0E01C78369 /* StationInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoScreen.swift; sourceTree = "<group>"; };
+		D7A38BB3A1A39D264F9AE7FB /* QuickActionsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsGrid.swift; sourceTree = "<group>"; };
+		D7D97F871B5932C545D399DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D9EC11A334BFF0D09A3E1714 /* StationHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationHeroView.swift; sourceTree = "<group>"; };
+		DA42F78C5CAC20CAB8C6EB9B /* RailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailCard.swift; sourceTree = "<group>"; };
+		DCD29EE7FA2ED7DD34072397 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		E1C8A02412B5F63B886D22C7 /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
+		E3D1FF213B2B0E84817EADDE /* LiveStationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStationEvent.swift; sourceTree = "<group>"; };
+		E6E3B32629CF547D4C92D157 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E7DADFEBC43F82B503FF9FB1 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
+		ECC93BA5D2A2475108FC9E18 /* AmenitiesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenitiesRow.swift; sourceTree = "<group>"; };
+		F277E90C73A6DF21A76309AC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F31886B037639C92CE2068BA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F3E400555CE8B8F8BC9AE1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4F342262F85F044A3B11E30 /* TrainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainService.swift; sourceTree = "<group>"; };
+		FB2AB84BDC3088180374342B /* RailColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailColors.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6F7890ABCDE12 /* IndiaMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndiaMapView.swift; sourceTree = "<group>"; };
+		AA1B2C3D4E5F6A7B8C9D0E11 /* StationCoordinateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCoordinateService.swift; sourceTree = "<group>"; };
+		CC2D3E4F5A6B7C8D9E0F1A22 /* GeoRouteStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoRouteStop.swift; sourceTree = "<group>"; };
+		EE4F5A6B7C8D9E0F1A2B3C44 /* TrainRouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainRouteMapView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		16A1C2A95AAF05A647EFEE30 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A12EFAAA4E97E07E0A2B8A26 /* BadgeView.swift */,
+				2437D7932AA69DD5B85FC825 /* DisplayText.swift */,
+				F277E90C73A6DF21A76309AC /* ErrorView.swift */,
+				11C5286F28D17F16EC4FBFBD /* LoadingView.swift */,
+				A076038FBD6F6015AE8DCC68 /* MetaItemView.swift */,
+				03100323ADF9A1D9D021A69C /* MonoText.swift */,
+				E1C8A02412B5F63B886D22C7 /* PageHeader.swift */,
+				8B407936CF8B0237EDF5BF1B /* PulseDot.swift */,
+				DA42F78C5CAC20CAB8C6EB9B /* RailCard.swift */,
+				326384599521EDC2006BFB4A /* RouteDisplayView.swift */,
+				44A6E60E19E37ED029E5BBAE /* SectionLabel.swift */,
+				35CA05362B9BED561EE00FFC /* TrainIconView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		243785704C840308C33EDCE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4A5BF8DB727112DABA67C94 /* APIResponse.swift */,
+				2C37DAC583FD4B3A253A0C31 /* Coach.swift */,
+				CC2D3E4F5A6B7C8D9E0F1A22 /* GeoRouteStop.swift */,
+				82810409289C9A3D7BADA620 /* Journey.swift */,
+				B30D8B7883E935B0EA16D37B /* LivePosition.swift */,
+				E3D1FF213B2B0E84817EADDE /* LiveStationEvent.swift */,
+				BF5F5D2DD125690283F2EFD9 /* Platform.swift */,
+				C7ABA026D4623AE40CFEFD61 /* PNR.swift */,
+				67FAB01D68E1380B9C86B6DE /* Route.swift */,
+				03FB2FD5DFA2B90075EF5A79 /* Station.swift */,
+				B9FC8DB9BF3378D0C4D48B10 /* Train.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B072085B36435A743B0F46D /* JourneyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4232544527F4270C64FE2ECE /* JourneyWidget.swift */,
+				47078087AC8EBBDF5057418B /* JourneyWidgetView.swift */,
+			);
+			path = JourneyWidget;
+			sourceTree = "<group>";
+		};
+		45F1D92697D210E507B43406 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				A66BAA6A203E9155A0274A74 /* RailActivityAttributes.swift */,
+				17EA3E448C28E167B43F8516 /* RailLiveActivityView.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		49B5AD556A3E6B4890719E97 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				198DD4979DDD09B5E4033B28 /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		4A02E9B408081E3B3995E249 /* Journeys */ = {
+			isa = PBXGroup;
+			children = (
+				C87ED28C2FDA254BA4B83DBB /* ActiveJourneyCard.swift */,
+				7D9E3ACDE6D68A26D1D1E1A8 /* JourneysScreen.swift */,
+				D7A38BB3A1A39D264F9AE7FB /* QuickActionsGrid.swift */,
+				2ACA4CFDAA6BE3235775ED97 /* UpcomingJourneyCard.swift */,
+			);
+			path = Journeys;
+			sourceTree = "<group>";
+		};
+		B1C2D3E4F5A6B7C8D9E0F1A2 /* IndiaMap */ = {
+			isa = PBXGroup;
+			children = (
+				F1A2B3C4D5E6F7890ABCDE12 /* IndiaMapView.swift */,
+			);
+			path = IndiaMap;
+			sourceTree = "<group>";
+		};
+		4A1AB05347ADFCCB580C2086 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1C2D3E4F5A6B7C8D9E0F1A2 /* IndiaMap */,
+				EA5D08EE5B82ECBF75670F19 /* JourneyDetail */,
+				4A02E9B408081E3B3995E249 /* Journeys */,
+				BFD06CE80989CAA9F1AFC10D /* LiveTracking */,
+				D014943C689A8C5737120057 /* Search */,
+				FB914E5AF3685B4E3D48CEEA /* StationInfo */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4EB8A431B625A42C21DC1A07 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				372AB54BD95E8621803C21F3 /* JourneyService.swift */,
+				4B4904F40EF98CB565EAD4DA /* LiveTrackingService.swift */,
+				25C8B30B5C240978A0EB93A2 /* PersistenceService.swift */,
+				88D462D26E2849A89330E085 /* PNRService.swift */,
+				AA1B2C3D4E5F6A7B8C9D0E11 /* StationCoordinateService.swift */,
+				E7DADFEBC43F82B503FF9FB1 /* StationService.swift */,
+				F4F342262F85F044A3B11E30 /* TrainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84D6B8EBCB5A2EDB846FC27F /* RailWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2B072085B36435A743B0F46D /* JourneyWidget */,
+				BBE148E5E2F424FE913F3A61 /* PNRWidget */,
+				9A6DE02703AB41CCF0603860 /* Info.plist */,
+				96D3F8D7080AC23BEB45D16C /* RailWidget.entitlements */,
+				CE042F396AA113A2A31916E3 /* RailWidgetBundle.swift */,
+			);
+			path = RailWidget;
+			sourceTree = "<group>";
+		};
+		8A57C26EAF7F97380EDD74A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B08252B47F63DC796974686 /* Rail.app */,
+				7115FF7BE2193DECB033DADB /* RailWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91316D0E9F84B3C9D9943EDF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0A50DFA706D0F51FB0F0D2B /* JourneyDetailViewModel.swift */,
+				7DD791B06CF3F266BC4F39DC /* JourneysViewModel.swift */,
+				23EED1418E8779021FE36DDB /* LiveTrackingViewModel.swift */,
+				3A78D4346F2BBBA402A59050 /* SearchViewModel.swift */,
+				DCD29EE7FA2ED7DD34072397 /* StationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BBE148E5E2F424FE913F3A61 /* PNRWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2D0F960693D423FEDB564F10 /* PNRWidget.swift */,
+				5F50E98A0EBE949F9B51B674 /* PNRWidgetView.swift */,
+			);
+			path = PNRWidget;
+			sourceTree = "<group>";
+		};
+		BFD06CE80989CAA9F1AFC10D /* LiveTracking */ = {
+			isa = PBXGroup;
+			children = (
+				C6748BFE6D961082756BA409 /* ETABadgeView.swift */,
+				D3C61FB2A28BA8034B822E94 /* LiveTrackingScreen.swift */,
+				75CD53BE3CB54A4703D1BD02 /* RouteMapView.swift */,
+				52B986E0DD5A9272CDB12688 /* SpeedBadgeView.swift */,
+				A6BC45B18E45295A62386E1C /* StationTimelineView.swift */,
+				EE4F5A6B7C8D9E0F1A2B3C44 /* TrainRouteMapView.swift */,
+			);
+			path = LiveTracking;
+			sourceTree = "<group>";
+		};
+		CF4D2017B1BD576DB8098642 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E6E3B32629CF547D4C92D157 /* APIClient.swift */,
+				89B9A125C557FF1810D64CA4 /* APIEndpoint.swift */,
+				F31886B037639C92CE2068BA /* APIError.swift */,
+				D37E4A49D305383CBE6F03D5 /* SSEClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D003FEEA42E20666F27CBE7C /* Rail */ = {
+			isa = PBXGroup;
+			children = (
+				16A1C2A95AAF05A647EFEE30 /* Components */,
+				49B5AD556A3E6B4890719E97 /* Config */,
+				F5E92736F12CACE2F275F0AC /* Extensions */,
+				45F1D92697D210E507B43406 /* LiveActivity */,
+				243785704C840308C33EDCE4 /* Models */,
+				CF4D2017B1BD576DB8098642 /* Networking */,
+				4EB8A431B625A42C21DC1A07 /* Services */,
+				F51A3E608385E8791583F29B /* Theme */,
+				91316D0E9F84B3C9D9943EDF /* ViewModels */,
+				4A1AB05347ADFCCB580C2086 /* Views */,
+				F3E400555CE8B8F8BC9AE1A0 /* Assets.xcassets */,
+				D7D97F871B5932C545D399DD /* ContentView.swift */,
+				9B3A5C0E9EC31394B910A1F7 /* Info.plist */,
+				D21E2A81CE961A3A34AE9366 /* Rail.entitlements */,
+				3D961AFD3C0146B29A0236B8 /* RailApp.swift */,
+			);
+			path = Rail;
+			sourceTree = "<group>";
+		};
+		D014943C689A8C5737120057 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC5013CF284BDCA0401185 /* PNRStatusCard.swift */,
+				B18041AEA52263295926A32F /* RecentSearchesList.swift */,
+				6BE559CED5FB0A69917ADFB6 /* SearchInputView.swift */,
+				74F47CAF82435A0CA6258375 /* SearchScreen.swift */,
+				157A12CBCFCC14DDC2BA56AA /* StationSearchResultsList.swift */,
+				A67727C822C57AC27217BA3A /* TrainSearchResultsList.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D960B1FC216FDD1782428392 = {
+			isa = PBXGroup;
+			children = (
+				D003FEEA42E20666F27CBE7C /* Rail */,
+				84D6B8EBCB5A2EDB846FC27F /* RailWidget */,
+				8A57C26EAF7F97380EDD74A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA5D08EE5B82ECBF75670F19 /* JourneyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ECC93BA5D2A2475108FC9E18 /* AmenitiesRow.swift */,
+				2316CD30A132763CD04C5857 /* BookingDetailsCard.swift */,
+				CEF59A10FBE4394EF72E5A6A /* CoachCompositionView.swift */,
+				753508596A641AED20C2865D /* DetailHeroView.swift */,
+				4A107ADB3371E5CEDF410716 /* JourneyDetailScreen.swift */,
+			);
+			path = JourneyDetail;
+			sourceTree = "<group>";
+		};
+		F51A3E608385E8791583F29B /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				C69F247989DF2173D02DD06C /* RailAnimations.swift */,
+				FB2AB84BDC3088180374342B /* RailColors.swift */,
+				79A2E0C6E3D2EF4F89202AB8 /* RailSpacing.swift */,
+				3F7017FB0EAED21E6BAD1C02 /* RailTypography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		F5E92736F12CACE2F275F0AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11281B8F3E771ED3BE635AC2 /* Color+Hex.swift */,
+				59CAEEE71A5DAC4581D46DB7 /* Date+Formatting.swift */,
+				6708DCEB9D39842B821D8A40 /* String+Railway.swift */,
+				CB03E9DE1F1355E5411E1369 /* View+FadeInUp.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB914E5AF3685B4E3D48CEEA /* StationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CF39403508F3808023A7C9C6 /* DeparturesListView.swift */,
+				AF2FDF283E7D9E268D73D591 /* PlatformGridView.swift */,
+				D9EC11A334BFF0D09A3E1714 /* StationHeroView.swift */,
+				D78B3B7D20D7EC0E01C78369 /* StationInfoScreen.swift */,
+				6139EC455CB51DE974ED17B0 /* StationStatsView.swift */,
+			);
+			path = StationInfo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		357A64A766E9A0A0C0C8619F /* Rail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FAEC70196A274BB5176CA2C /* Build configuration list for PBXNativeTarget "Rail" */;
+			buildPhases = (
+				5E40BF6F8575106687891506 /* Sources */,
+				2D61BC8EF7B8C902AB1CA99E /* Resources */,
+				D2967D0CA29C3B75822839AD /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				701C9EA466EB3EC626C3821C /* PBXTargetDependency */,
+			);
+			name = Rail;
+			packageProductDependencies = (
+			);
+			productName = Rail;
+			productReference = 4B08252B47F63DC796974686 /* Rail.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBDE6D96DCABEEBEBC8F7A40 /* RailWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64795AE37BF4F19D3BC011BC /* Build configuration list for PBXNativeTarget "RailWidgetExtension" */;
+			buildPhases = (
+				5AD49FADF4E2C023C05471CC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RailWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = RailWidgetExtension;
+			productReference = 7115FF7BE2193DECB033DADB /* RailWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F489BFA196A1A47417DC34ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 3328ED6608A57B9B998ECDD5 /* Build configuration list for PBXProject "Rail" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D960B1FC216FDD1782428392;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				357A64A766E9A0A0C0C8619F /* Rail */,
+				FBDE6D96DCABEEBEBC8F7A40 /* RailWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D61BC8EF7B8C902AB1CA99E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2101120333DCD3E652178696 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AD49FADF4E2C023C05471CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01729BA89B4F32A4C836282 /* JourneyWidget.swift in Sources */,
+				F58E359BC71F1C36ED5C7622 /* JourneyWidgetView.swift in Sources */,
+				678F67DD78239BEB9F884D13 /* PNRWidget.swift in Sources */,
+				30B0A396C2B2E135ECD33EEF /* PNRWidgetView.swift in Sources */,
+				3F9B0C9EEB431B7A707FEE4D /* RailWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E40BF6F8575106687891506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F021C190DFAF1D8ABB68AF /* APIClient.swift in Sources */,
+				3C64F459A6B68B7A98713432 /* APIEndpoint.swift in Sources */,
+				C942007EC67E70D978F89192 /* APIError.swift in Sources */,
+				A45E07D5B9B5A18022227CAF /* APIResponse.swift in Sources */,
+				1B183E34757BB48B9D82B13E /* ActiveJourneyCard.swift in Sources */,
+				B34C3A8EC685CD358488FFF5 /* AmenitiesRow.swift in Sources */,
+				9BFF71D303DEA19485BE2B76 /* AppConfig.swift in Sources */,
+				DC3C675698EE3A8D800D0718 /* BadgeView.swift in Sources */,
+				D0F984831B52263C5D877993 /* BookingDetailsCard.swift in Sources */,
+				006B804476221DAB93FE7DC9 /* Coach.swift in Sources */,
+				D7EAD45C309C950843AF559D /* CoachCompositionView.swift in Sources */,
+				499C48F7C19302F96B222096 /* Color+Hex.swift in Sources */,
+				178076BD1D59B3F8E01805E0 /* ContentView.swift in Sources */,
+				4753C7EDD7FE2543C72A8DA3 /* Date+Formatting.swift in Sources */,
+				B5C909D38C2FB47D927BF8E7 /* DeparturesListView.swift in Sources */,
+				BD83D118F7CEA5C3CD7B31BA /* DetailHeroView.swift in Sources */,
+				4C3DD16365A20B9F961F7FCF /* DisplayText.swift in Sources */,
+				6173A27B2AC519DD4426897A /* ETABadgeView.swift in Sources */,
+				B906D9F34464102DF3EC0290 /* ErrorView.swift in Sources */,
+				52136681C61B95564D635DBC /* Journey.swift in Sources */,
+				9983CCDE3A70F5C2B3CCB657 /* JourneyDetailScreen.swift in Sources */,
+				25EA9790997A000A3F30A695 /* JourneyDetailViewModel.swift in Sources */,
+				A3A5763610F929863B541131 /* JourneyService.swift in Sources */,
+				04D0F41203E2D0976671E022 /* JourneysScreen.swift in Sources */,
+				840FF7BE319CA6E07AB55470 /* JourneysViewModel.swift in Sources */,
+				C14D9126CF6C7EDAD1A3C79A /* LivePosition.swift in Sources */,
+				A04F167CE40D65E5DDEC44F7 /* LiveStationEvent.swift in Sources */,
+				11B0E3FA8FF09A31783D4B86 /* LiveTrackingScreen.swift in Sources */,
+				D92192FB6C8027F4289B8801 /* LiveTrackingService.swift in Sources */,
+				3962EF487B67DCD282422251 /* LiveTrackingViewModel.swift in Sources */,
+				D555120DF54B9C98A37E8A51 /* LoadingView.swift in Sources */,
+				6323549941F04B2637DC5E6F /* MetaItemView.swift in Sources */,
+				1A825ECCE7AF4AF132DA1656 /* MonoText.swift in Sources */,
+				1D59D4516CA07DA0F1F31A52 /* PNR.swift in Sources */,
+				16FED33F7792008245614968 /* PNRService.swift in Sources */,
+				8893EE4EF19C99B53CB097A4 /* PNRStatusCard.swift in Sources */,
+				B59852A9407CBDDE2181ECEE /* PageHeader.swift in Sources */,
+				837FDDC26C9649C70272DAA8 /* PersistenceService.swift in Sources */,
+				D370BCAA94BBB863774DC9E7 /* Platform.swift in Sources */,
+				8008F85151B8826014C8076F /* PlatformGridView.swift in Sources */,
+				ADF0400B2EFBEDA7E4C642E7 /* PulseDot.swift in Sources */,
+				67E4FAF1014C20C34DC2CEAF /* QuickActionsGrid.swift in Sources */,
+				21DDD3B0264C161D7ECE6DF5 /* RailActivityAttributes.swift in Sources */,
+				9D2EF50578F762F03A45FF60 /* RailAnimations.swift in Sources */,
+				D4B387BE1A87FE9313F5E0A3 /* RailApp.swift in Sources */,
+				4929AC1E1CF37945A712409B /* RailCard.swift in Sources */,
+				8FFA1DB2B78EE53D06029310 /* RailColors.swift in Sources */,
+				253F421BFA6D9B469952282F /* RailLiveActivityView.swift in Sources */,
+				E68FD08CFDB82B98D83FEDE6 /* RailSpacing.swift in Sources */,
+				DC21BAADD74CDDE251B62C98 /* RailTypography.swift in Sources */,
+				12F1AC81CF2F0D9A724E6FA6 /* RecentSearchesList.swift in Sources */,
+				1935E4483C62B9487EAA1EB5 /* Route.swift in Sources */,
+				7B3E9F8F3C4C5746E5B5BD45 /* RouteDisplayView.swift in Sources */,
+				4E76E82FD44EBCBD2404AA36 /* RouteMapView.swift in Sources */,
+				F019B81C1278009C20DC6C7B /* SSEClient.swift in Sources */,
+				48711F7A96845D627959D4E2 /* SearchInputView.swift in Sources */,
+				4C7D1AD9D0CE93DF2F8BE30E /* SearchScreen.swift in Sources */,
+				669B2E756AC774F924FC9319 /* SearchViewModel.swift in Sources */,
+				99A72EEE172DA16F3ECEE1EC /* SectionLabel.swift in Sources */,
+				AC6E7EB2344DF63BA5EF3893 /* SpeedBadgeView.swift in Sources */,
+				DAAF276DE7F8C260349CEDFD /* Station.swift in Sources */,
+				353E4A99727DD431CC82E18E /* StationHeroView.swift in Sources */,
+				ED9B24D659EFA88A8616FF2B /* StationInfoScreen.swift in Sources */,
+				8A25BEB9349F7BF9595D8D02 /* StationSearchResultsList.swift in Sources */,
+				27D4C7A02498404FED124958 /* StationService.swift in Sources */,
+				F8058E7409BDD907630CB5AD /* StationStatsView.swift in Sources */,
+				2C51094DB4EAD3FE8D1CEB3D /* StationTimelineView.swift in Sources */,
+				0F8B5B8D100873A24844A6CF /* StationViewModel.swift in Sources */,
+				0EED3512DBCDC0DEFA831CE9 /* String+Railway.swift in Sources */,
+				0070955C3A7DD0E55A8A6182 /* Train.swift in Sources */,
+				DD9239248A6658835CFCEED5 /* TrainIconView.swift in Sources */,
+				E5E61B60E4AA65358DB9A86E /* TrainSearchResultsList.swift in Sources */,
+				395E2D6828B008FC090D6486 /* TrainService.swift in Sources */,
+				27A84A7CC44C67380476AE55 /* UpcomingJourneyCard.swift in Sources */,
+				DB8BB2F315671FF0CC11CA56 /* View+FadeInUp.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* IndiaMapView.swift in Sources */,
+				BB1C2D3E4F5A6B7C8D9E0F11 /* StationCoordinateService.swift in Sources */,
+				DD3E4F5A6B7C8D9E0F1A2B33 /* GeoRouteStop.swift in Sources */,
+				FF5A6B7C8D9E0F1A2B3C4D55 /* TrainRouteMapView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		701C9EA466EB3EC626C3821C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBDE6D96DCABEEBEBC8F7A40 /* RailWidgetExtension */;
+			targetProxy = DA284B6000EA077577122A49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1695DFA36EDA452D47D6AC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RailWidget/RailWidget.entitlements;
+				"CODE_SIGN_STYLE[sdk=*]" = "";
+				DEVELOPMENT_TEAM = 2M9624482Y;
+				INFOPLIST_FILE = RailWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rail.app.widget;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = YES;
+				RUNTIME_EXCEPTION_ALLOW_JIT = YES;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = YES;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1955D618808A8B346286B5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		49077D883DCB37A155903CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rail/Rail.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2M9624482Y;
+				INFOPLIST_FILE = Rail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Rail;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "fetch remote-notification";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rail.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B8D1A337460BAE5D254AA67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RailWidget/RailWidget.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = RailWidget/RailWidget.entitlements;
+				DEVELOPMENT_TEAM = 2M9624482Y;
+				INFOPLIST_FILE = RailWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rail.app.widget;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = YES;
+				RUNTIME_EXCEPTION_ALLOW_JIT = YES;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = YES;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80FEA4C1C55FAD1B258EB611 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CECCB54E496FA291BD28A3F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rail/Rail.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2M9624482Y;
+				INFOPLIST_FILE = Rail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Rail;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "fetch remote-notification";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rail.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FAEC70196A274BB5176CA2C /* Build configuration list for PBXNativeTarget "Rail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49077D883DCB37A155903CB5 /* Debug */,
+				CECCB54E496FA291BD28A3F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3328ED6608A57B9B998ECDD5 /* Build configuration list for PBXProject "Rail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1955D618808A8B346286B5AC /* Debug */,
+				80FEA4C1C55FAD1B258EB611 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		64795AE37BF4F19D3BC011BC /* Build configuration list for PBXNativeTarget "RailWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1695DFA36EDA452D47D6AC45 /* Debug */,
+				6B8D1A337460BAE5D254AA67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F489BFA196A1A47417DC34ED /* Project object */;
+}
